@@ -1,0 +1,11 @@
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\ClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\ClassLibrary.AssemblyInfoInputs.cache
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\ClassLibrary.AssemblyInfo.cs
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\ClassLibrary.csproj.CoreCompileInputs.cache
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\bin\Debug\net8.0\ClassLibrary.deps.json
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\bin\Debug\net8.0\ClassLibrary.dll
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\bin\Debug\net8.0\ClassLibrary.pdb
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\ClassLibrary.dll
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\refint\ClassLibrary.dll
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\ClassLibrary.pdb
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\ref\ClassLibrary.dll
