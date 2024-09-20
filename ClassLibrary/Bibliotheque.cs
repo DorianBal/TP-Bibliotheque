@@ -97,50 +97,46 @@ namespace ClassLibrary
         {
             foreach (Livre livre in livres)
             {
-                if(livre.isbn == idLivre)
+                if (livre.isbn == idLivre)
                 {
-                    livre.estEmprunte = true;
-
                     foreach (Utilisateur user in utilisateurs)
                     {
-                        if(idUser == user.id)
+                        if (idUser == user.id)
                         {
+                            int maxLivres = user.prenium ? 5 : 3;
+
+                            if (user.livresEmpruntes.Count >= maxLivres)
+                            {
+                                Console.WriteLine($"Erreur : {user.nom} {user.prenom} a déjà emprunté le nombre maximum de livres ({maxLivres}).");
+                                return false;
+                            }
+
+                            livre.estEmprunte = true;
                             user.AjoutLivreEmprunte(livre);
+                            livres.Remove(livre);
+                            return true;
                         }
                     }
-
-                    livres.Remove(livre);
-                    return true;
                 }
             }
             return false;
         }
 
+
         public bool RetournerLivreUtilisateur(int idLivre, int idUser)
         {
-            foreach (Livre livre in livres)
+            foreach (Utilisateur user in utilisateurs)
             {
-                Console.WriteLine("ici");
-
-                Console.WriteLine();
-
-                if (livre.isbn == idLivre)
+                Console.WriteLine("oco");
+                if (idUser == user.id)
                 {
-                    Console.WriteLine("la");
-                    //livre.estEmprunte = false;
-                    //livres.Add(livre);
-
-                    foreach (Utilisateur user in utilisateurs)
+                    foreach (Livre livre in user.livresEmpruntes)
                     {
-                        Console.WriteLine("oco");
-                        if (idUser == user.id)
-                        {
-                            Console.WriteLine("test");
-                            user.SuppressionLivreEmprunte(livre);
-                            Console.WriteLine("pas là");
-                            return true;
-                        }
-                    }
+                        livre.estEmprunte = false;
+                        livres.Add(livre);
+                        user.SuppressionLivreEmprunte(livre);
+                        return true;
+                    }                                       
                 }
             }
             return false;

@@ -38,7 +38,7 @@ bool continuer = true;
 
 while (continuer)
 {
-    //Console.Clear();
+    Console.Clear();
     Console.WriteLine("Bienvenue à la bibliothèque, veuillez choisir une option");
     Console.WriteLine("1 : Voir tous les livres");
     Console.WriteLine("2 : Voir tous les utilisateurs");
@@ -53,7 +53,7 @@ while (continuer)
         // -------------------- Visualisation des livres --------------------
 
         case "1":
-            //Console.Clear();
+            Console.Clear();
             Console.WriteLine("Livres :");
             foreach (Livre livre in biblio.livres)
             {
@@ -111,7 +111,7 @@ while (continuer)
         // -------------------- Visualisation des utilisateurs --------------------
 
         case "2":
-            //Console.Clear();
+            Console.Clear();
             Console.WriteLine("Utilisateurs :");
             foreach (Utilisateur utilisateur in biblio.utilisateurs)
             {
@@ -181,24 +181,21 @@ while (continuer)
             //et chaque emprunt est limité à 3 livres par utilisateur.
             //Sauf pour le client premium qui peut emprunter jusqu'à 5 livres.
 
-            //On doit pouvoir emprunter un livre,
-            //retourner un livre, et
-            //lister les emprunts en cours.
+            Console.Clear();
+            Console.WriteLine("Emprunts :\n");
 
-            //Console.Clear();
-            Console.WriteLine("Emprunts :");
             foreach (Utilisateur utilisateur in biblio.utilisateurs)
             {
                 if (utilisateur.livresEmpruntes.Count > 0)
                 {
-                    Console.Write(utilisateur.nom + " " +  utilisateur.prenom + " (" + utilisateur.id + ") - ");
-                
+                    Console.Write(utilisateur.nom + " " + utilisateur.prenom + " (" + utilisateur.id + ") : \n");
+
                     foreach (Livre livreEmpruntee in utilisateur.livresEmpruntes)
                     {
-                        Console.WriteLine(livreEmpruntee.titre + " (" + livreEmpruntee.isbn + ")");
+                        Console.WriteLine("\t*" + livreEmpruntee.titre + " (" + livreEmpruntee.isbn + ")");
                     }
                     Console.WriteLine();
-                }
+                }           
             }
 
             Console.WriteLine("\nVeuillez choisir une option");
