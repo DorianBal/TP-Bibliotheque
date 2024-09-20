@@ -92,5 +92,18 @@ namespace ClassLibrary
             }
             return idMax + 1;
         }
+
+        public bool ChangerStatutLivre(List<Livre> livres, int idLivre, int idUser, bool statut)
+        {
+            foreach (Livre livre in livres)
+            {
+                if(livre.isbn == idLivre)
+                {
+                    livre.estEmprunte = statut;
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

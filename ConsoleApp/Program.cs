@@ -1,4 +1,5 @@
-﻿using ClassLibrary;
+﻿using System.Collections.Generic;
+using ClassLibrary;
 
 List<Livre> livres = new List<Livre>
 {
@@ -176,21 +177,33 @@ while (continuer)
         // -------------------- Visualisation des emprunts --------------------
 
         case "3":
+            //Un utilisateur peut emprunter un ou plusieurs livres,
+            //et chaque emprunt est limité à 3 livres par utilisateur.
+            //Sauf pour le client premium qui peut emprunter jusqu'à 5 livres.
+
+            //On doit pouvoir emprunter un livre,
+            //retourner un livre, et
+            //lister les emprunts en cours.
+
             Console.Clear();
             Console.WriteLine("Emprunts :");
             foreach (Utilisateur utilisateur in biblio.utilisateurs)
             {
-                Console.Write(utilisateur.id + " - " + utilisateur.prenom + " " + utilisateur.nom + ", ");
-                if (utilisateur.prenium)
-                    Console.Write("Prenium");
-                else
-                    Console.Write("Non-Prenium");
-                Console.WriteLine();
+                if (utilisateur.livresEmpruntes != null)
+                {
+                    Console.Write(utilisateur.id + " - ");
+                
+                    foreach (Livre livreEmpruntee in utilisateur.livresEmpruntes)
+                    {
+                        Console.WriteLine(livreEmpruntee.titre);
+                    }
+                    Console.WriteLine();
+                }
             }
 
             Console.WriteLine("\nVeuillez choisir une option");
-            Console.WriteLine("1 : Ajouter un utilisateur");
-            Console.WriteLine("2 : Supprimer un utilisateur");
+            Console.WriteLine("1 : Emprunter un livre");
+            Console.WriteLine("2 : Retourner un livre");
             Console.WriteLine("3 : Retour\n");
 
             choix = Console.ReadLine();
@@ -200,31 +213,34 @@ while (continuer)
             switch (choix)
             {
                 case "1":
-                    Console.WriteLine("Veuillez entrer les informations de l'utilisateur, comme dans l'exemple : (avec false = est pas prenium, true = est prenium)");
-                    Console.WriteLine("nom, prenom, false");
+                    Console.WriteLine("Veuillez entrer l'id de l'utilisateur, et l'id du livre à emprunter, comme avec l'exemple :");
+                    Console.WriteLine("2, 15");
                     string utilisateurDetails = Console.ReadLine();
 
                     string[] detailsUtilisateur = utilisateurDetails.Split(',');
 
-                    string nom = detailsUtilisateur[0].Trim();
-                    string prenom = detailsUtilisateur[1].Trim();
-                    bool estPrenium = bool.Parse(detailsUtilisateur[2].Trim());
+                    int idUser = Int32.Parse(detailsUtilisateur[0].Trim());
+                    int idLivre = Int32.Parse(detailsUtilisateur[1].Trim());
 
-                    Utilisateur utilisateurAAjouter = new Utilisateur(nom, prenom, biblio.GetLastIdUser(utilisateurs), estPrenium, new List<Livre>());
-
-                    if (biblio.AjoutUtilisateur(utilisateurAAjouter))
-                        Console.WriteLine("Utilisateur ajouté !");
+                    if (biblio.ChangerStatutLivre(livres, idLivre, idUser, true))
+                        Console.WriteLine("Livre emprunté !");
                     else
                         Console.WriteLine("Erreur");
 
                     break;
 
                 case "2":
-                    Console.WriteLine("Veuillez entrer l'id de l'utilisateur à supprimer: \n");
-                    int utilisateurASupprimer = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("Veuillez entrer l'id de l'utilisateur, et l'id du livre à emprunter, comme avec l'exemple :");
+                    Console.WriteLine("2, 15");
+                    utilisateurDetails = Console.ReadLine();
 
-                    if (biblio.SuppressionUtilisateur(utilisateurASupprimer))
-                        Console.WriteLine("Utilisateur supprimé !");
+                    detailsUtilisateur = utilisateurDetails.Split(',');
+
+                    idUser = Int32.Parse(detailsUtilisateur[0].Trim());
+                    idLivre = Int32.Parse(detailsUtilisateur[1].Trim());
+
+                    if (biblio.ChangerStatutLivre(livres, idLivre, idUser, false))
+                        Console.WriteLine("Livre emprunté !");
                     else
                         Console.WriteLine("Erreur");
 

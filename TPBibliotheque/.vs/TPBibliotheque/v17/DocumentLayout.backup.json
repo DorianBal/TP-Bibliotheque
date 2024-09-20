@@ -16,8 +16,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -26,7 +30,7 @@
               "RelativeDocumentMoniker": "..\\ConsoleApp\\Program.cs",
               "ToolTip": "D:\\Documents\\DIIAGE\\AnneeD1\\TP POO\\TP Bibliotheque\\ConsoleApp\\Program.cs",
               "RelativeToolTip": "..\\ConsoleApp\\Program.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADMAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAALIAAAAAAAAAAAAAAMMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-18T08:31:47.805Z",
               "EditorCaption": ""
@@ -39,7 +43,7 @@
               "RelativeDocumentMoniker": "..\\ClassLibrary\\Bibliotheque.cs",
               "ToolTip": "D:\\Documents\\DIIAGE\\AnneeD1\\TP POO\\TP Bibliotheque\\ClassLibrary\\Bibliotheque.cs",
               "RelativeToolTip": "..\\ClassLibrary\\Bibliotheque.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAD8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEAAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-18T07:39:47.981Z",
               "EditorCaption": ""
