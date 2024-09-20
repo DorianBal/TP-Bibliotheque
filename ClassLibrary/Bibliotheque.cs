@@ -71,7 +71,7 @@ namespace ClassLibrary
             return false;
         }
 
-        public int GetLastIsbnLivre(List<Livre> livres)
+        public int GetLastIsbnLivre()
         {
             int isbnMax = 1;
             foreach(Livre livre in livres)
@@ -82,10 +82,10 @@ namespace ClassLibrary
             return isbnMax + 1;
         }
 
-        public int GetLastIdUser(List<Utilisateur> users)
+        public int GetLastIdUser()
         {
             int idMax = 1;
-            foreach (Utilisateur user in users)
+            foreach (Utilisateur user in utilisateurs)
             {
                 if (user.id > idMax)
                     idMax = user.id;
@@ -93,14 +93,54 @@ namespace ClassLibrary
             return idMax + 1;
         }
 
-        public bool ChangerStatutLivre(List<Livre> livres, int idLivre, int idUser, bool statut)
+        public bool AjoutLivreUtilisateur(int idLivre, int idUser)
         {
             foreach (Livre livre in livres)
             {
                 if(livre.isbn == idLivre)
                 {
-                    livre.estEmprunte = statut;
+                    livre.estEmprunte = true;
+
+                    foreach (Utilisateur user in utilisateurs)
+                    {
+                        if(idUser == user.id)
+                        {
+                            user.AjoutLivreEmprunte(livre);
+                        }
+                    }
+
+                    livres.Remove(livre);
                     return true;
+                }
+            }
+            return false;
+        }
+
+        public bool RetournerLivreUtilisateur(int idLivre, int idUser)
+        {
+            foreach (Livre livre in livres)
+            {
+                Console.WriteLine("ici");
+
+                Console.WriteLine();
+
+                if (livre.isbn == idLivre)
+                {
+                    Console.WriteLine("la");
+                    //livre.estEmprunte = false;
+                    //livres.Add(livre);
+
+                    foreach (Utilisateur user in utilisateurs)
+                    {
+                        Console.WriteLine("oco");
+                        if (idUser == user.id)
+                        {
+                            Console.WriteLine("test");
+                            user.SuppressionLivreEmprunte(livre);
+                            Console.WriteLine("pas là");
+                            return true;
+                        }
+                    }
                 }
             }
             return false;

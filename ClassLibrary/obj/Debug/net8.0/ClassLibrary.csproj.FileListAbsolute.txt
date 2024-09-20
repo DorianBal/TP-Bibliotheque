@@ -9,3 +9,4 @@ D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0
 D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\refint\ClassLibrary.dll
 D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\ClassLibrary.pdb
 D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\ref\ClassLibrary.dll
+D:\Documents\DIIAGE\AnneeD1\TP POO\TP Bibliotheque\ClassLibrary\obj\Debug\net8.0\ClassLibrary.sourcelink.json

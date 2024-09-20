@@ -3,10 +3,10 @@
   "WorkspaceRootPath": "D:\\Documents\\DIIAGE\\AnneeD1\\TP POO\\TP Bibliotheque\\TPBibliotheque\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A004DC12-7B80-4C88-AB33-6E6F46A1B030}|..\\ConsoleApp\\ConsoleApp.csproj|d:\\documents\\diiage\\anneed1\\tp poo\\tp bibliotheque\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4092C73B-507F-48E2-9F0A-85A88CC84F66}|..\\ClassLibrary\\ClassLibrary.csproj|d:\\documents\\diiage\\anneed1\\tp poo\\tp bibliotheque\\classlibrary\\bibliotheque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4092C73B-507F-48E2-9F0A-85A88CC84F66}|..\\ClassLibrary\\ClassLibrary.csproj|d:\\documents\\diiage\\anneed1\\tp poo\\tp bibliotheque\\classlibrary\\bibliotheque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A004DC12-7B80-4C88-AB33-6E6F46A1B030}|..\\ConsoleApp\\ConsoleApp.csproj|d:\\documents\\diiage\\anneed1\\tp poo\\tp bibliotheque\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,7 +16,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -24,26 +24,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Documents\\DIIAGE\\AnneeD1\\TP POO\\TP Bibliotheque\\ConsoleApp\\Program.cs",
               "RelativeDocumentMoniker": "..\\ConsoleApp\\Program.cs",
               "ToolTip": "D:\\Documents\\DIIAGE\\AnneeD1\\TP POO\\TP Bibliotheque\\ConsoleApp\\Program.cs",
               "RelativeToolTip": "..\\ConsoleApp\\Program.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAAAMMAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAKgAAAAAAAAAAAASwK4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-18T08:31:47.805Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Bibliotheque.cs",
               "DocumentMoniker": "D:\\Documents\\DIIAGE\\AnneeD1\\TP POO\\TP Bibliotheque\\ClassLibrary\\Bibliotheque.cs",
               "RelativeDocumentMoniker": "..\\ClassLibrary\\Bibliotheque.cs",
               "ToolTip": "D:\\Documents\\DIIAGE\\AnneeD1\\TP POO\\TP Bibliotheque\\ClassLibrary\\Bibliotheque.cs",
               "RelativeToolTip": "..\\ClassLibrary\\Bibliotheque.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEAAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAkwIgAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-18T07:39:47.981Z",
               "EditorCaption": ""

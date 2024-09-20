@@ -38,7 +38,7 @@ bool continuer = true;
 
 while (continuer)
 {
-    Console.Clear();
+    //Console.Clear();
     Console.WriteLine("Bienvenue à la bibliothèque, veuillez choisir une option");
     Console.WriteLine("1 : Voir tous les livres");
     Console.WriteLine("2 : Voir tous les utilisateurs");
@@ -53,7 +53,7 @@ while (continuer)
         // -------------------- Visualisation des livres --------------------
 
         case "1":
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Livres :");
             foreach (Livre livre in biblio.livres)
             {
@@ -82,7 +82,7 @@ while (continuer)
                     string auteur = detailsLivre[1].Trim();
                     int annee = Int32.Parse(detailsLivre[2].Trim());
 
-                    Livre livreAAjouter = new Livre(titre, auteur, annee, biblio.GetLastIsbnLivre(livres), false);
+                    Livre livreAAjouter = new Livre(titre, auteur, annee, biblio.GetLastIsbnLivre(), false);
 
                     if (biblio.AjoutLivre(livreAAjouter))
                         Console.WriteLine("Livre ajouté !");
@@ -111,7 +111,7 @@ while (continuer)
         // -------------------- Visualisation des utilisateurs --------------------
 
         case "2":
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Utilisateurs :");
             foreach (Utilisateur utilisateur in biblio.utilisateurs)
             {
@@ -145,7 +145,7 @@ while (continuer)
                     string prenom = detailsUtilisateur[1].Trim();
                     bool estPrenium = bool.Parse(detailsUtilisateur[2].Trim());
 
-                    Utilisateur utilisateurAAjouter = new Utilisateur(nom, prenom, biblio.GetLastIdUser(utilisateurs), estPrenium, new List<Livre>());
+                    Utilisateur utilisateurAAjouter = new Utilisateur(nom, prenom, biblio.GetLastIdUser(), estPrenium, new List<Livre>());
 
                     if (biblio.AjoutUtilisateur(utilisateurAAjouter))
                         Console.WriteLine("Utilisateur ajouté !");
@@ -185,17 +185,17 @@ while (continuer)
             //retourner un livre, et
             //lister les emprunts en cours.
 
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Emprunts :");
             foreach (Utilisateur utilisateur in biblio.utilisateurs)
             {
-                if (utilisateur.livresEmpruntes != null)
+                if (utilisateur.livresEmpruntes.Count > 0)
                 {
-                    Console.Write(utilisateur.id + " - ");
+                    Console.Write(utilisateur.nom + " " +  utilisateur.prenom + " (" + utilisateur.id + ") - ");
                 
                     foreach (Livre livreEmpruntee in utilisateur.livresEmpruntes)
                     {
-                        Console.WriteLine(livreEmpruntee.titre);
+                        Console.WriteLine(livreEmpruntee.titre + " (" + livreEmpruntee.isbn + ")");
                     }
                     Console.WriteLine();
                 }
@@ -222,29 +222,32 @@ while (continuer)
                     int idUser = Int32.Parse(detailsUtilisateur[0].Trim());
                     int idLivre = Int32.Parse(detailsUtilisateur[1].Trim());
 
-                    if (biblio.ChangerStatutLivre(livres, idLivre, idUser, true))
+                    if (biblio.AjoutLivreUtilisateur(idLivre, idUser))
                         Console.WriteLine("Livre emprunté !");
                     else
                         Console.WriteLine("Erreur");
 
                     break;
+
 
                 case "2":
-                    Console.WriteLine("Veuillez entrer l'id de l'utilisateur, et l'id du livre à emprunter, comme avec l'exemple :");
+                    Console.WriteLine("Veuillez entrer l'id de l'utilisateur, et l'id du livre à retourner, comme avec l'exemple :");
                     Console.WriteLine("2, 15");
-                    utilisateurDetails = Console.ReadLine();
+                    string utilisateurDetails2 = Console.ReadLine();
 
-                    detailsUtilisateur = utilisateurDetails.Split(',');
+                    string[] detailsUtilisateur2 = utilisateurDetails2.Split(',');
 
-                    idUser = Int32.Parse(detailsUtilisateur[0].Trim());
-                    idLivre = Int32.Parse(detailsUtilisateur[1].Trim());
+                    int idUser2 = Int32.Parse(detailsUtilisateur2[0].Trim());
+                    int idLivre2 = Int32.Parse(detailsUtilisateur2[1].Trim());
 
-                    if (biblio.ChangerStatutLivre(livres, idLivre, idUser, false))
-                        Console.WriteLine("Livre emprunté !");
+                    if (biblio.RetournerLivreUtilisateur(idLivre2, idUser2))
+                        Console.WriteLine("Livre retourné !");
                     else
                         Console.WriteLine("Erreur");
 
                     break;
+
+
                 case "3":
                     break;
                 default:
